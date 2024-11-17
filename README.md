@@ -1,5 +1,5 @@
 # EX-NO-9-RSA-Algorithm
-# DATE:03-10-2024
+
 ## AIM:
 To Implement RSA Encryption Algorithm in Cryptography
 
@@ -42,7 +42,6 @@ The security of RSA relies on the difficulty of factoring large numbers; thus, c
 #include <math.h>
 #include <ctype.h>
 #include <stdlib.h>
-
 // Function to calculate GCD using the Euclidean algorithm
 int gcd(int a, int b) {
     while (b != 0) {
@@ -52,7 +51,6 @@ int gcd(int a, int b) {
     }
     return a;
 }
-
 // Function to calculate (base^exp) % mod using modular exponentiation
 long long mod_exp(long long base, long long exp, long long mod) {
     long long result = 1;
@@ -64,7 +62,6 @@ long long mod_exp(long long base, long long exp, long long mod) {
     }
     return result;
 }
-
 // Function to calculate the modular inverse of e mod phi using the extended Euclidean algorithm
 int mod_inverse(int e, int phi) {
     int t = 0, newt = 1;
@@ -82,7 +79,6 @@ int mod_inverse(int e, int phi) {
     if (t < 0) t = t + phi;
     return t;
 }
-
 int main() {
     // Step 1: Initialize prime numbers p and q (use larger primes for real-world applications)
     int p = 61;
@@ -98,14 +94,12 @@ int main() {
         printf("e and phi(n) are not coprime!\n");
         return -1;
     }
-
     // Step 4: Compute the decryption key d, the modular inverse of e mod phi
     int d = mod_inverse(e, phi);
     if (d == -1) {
         printf("No modular inverse found for e!\n");
         return -1;
     }
-
     // Step 5: Display the public and private keys
     printf("Public Key: (e = %d, n = %d)\n", e, n);
     printf("Private Key: (d = %d, n = %d)\n", d, n);
@@ -134,11 +128,11 @@ int main() {
         printf("%c", (char)decrypted);  // Convert the decrypted ASCII value back to a character
     }
     printf("\n");
-
     return 0;
 }
 ```
 ## Output:
-![exp-9](https://github.com/user-attachments/assets/60377d60-0f4f-4f44-9e8f-a903ddb48a36)
+![image](https://github.com/user-attachments/assets/8b983951-6c14-448e-aba4-2e070445b79f)
+
 ## Result:
  The program is executed successfully.
